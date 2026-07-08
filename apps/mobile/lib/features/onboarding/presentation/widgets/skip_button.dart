@@ -12,7 +12,7 @@ class SkipButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: onPressed,
-      child: const Text('Skip'),
+      child: const Text("Skip"),
     );
   }
 }

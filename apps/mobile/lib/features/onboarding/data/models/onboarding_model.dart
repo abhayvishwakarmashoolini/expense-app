@@ -1,9 +1,9 @@
-class OnboardingModel {
-  final String title;
-  final String subtitle;
+import '../../domain/entities/onboarding_entity.dart';
 
+class OnboardingModel extends OnboardingEntity {
   const OnboardingModel({
-    required this.title,
-    required this.subtitle,
+    required super.title,
+    required super.description,
+    required super.image,
   });
 }

@@ -1,6 +1,9 @@
 class AppRoutes {
   AppRoutes._();
 
-  static const String splash = '/';
-  static const String onboarding = '/onboarding';
+  static const splash = '/';
+
+  static const onboarding = '/onboarding';
+
+  static const login = '/login';
 }
