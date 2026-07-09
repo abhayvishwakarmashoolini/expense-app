@@ -15,10 +15,11 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    _startApp();
+
+    _initialize();
   }
 
-  Future<void> _startApp() async {
+  Future<void> _initialize() async {
     await Future.delayed(const Duration(seconds: 2));
 
     final completed =
@@ -26,28 +27,52 @@ class _SplashScreenState extends State<SplashScreen> {
 
     if (!mounted) return;
 
-    if (completed) {
-      Navigator.pushReplacementNamed(
-        context,
-        AppRoutes.login,
-      );
-    } else {
-      Navigator.pushReplacementNamed(
-        context,
-        AppRoutes.onboarding,
-      );
-    }
+    Navigator.pushReplacementNamed(
+      context,
+      completed
+          ? AppRoutes.login
+          : AppRoutes.onboarding,
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text(
-          AppStrings.appName,
-          style: const TextStyle(
-            fontSize: 32,
-            fontWeight: FontWeight.bold,
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                'assets/images/splitzoo_logo.png',
+                width: 140,
+              ),
+
+              const SizedBox(height: 24),
+
+              Text(
+                AppStrings.appName,
+                style: const TextStyle(
+                  fontSize: 34,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+
+              const SizedBox(height: 10),
+
+              const Text(
+                'Split Smarter. Settle Faster.',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.grey,
+                ),
+              ),
+
+              const SizedBox(height: 40),
+
+              const CircularProgressIndicator(),
+            ],
           ),
         ),
       ),
