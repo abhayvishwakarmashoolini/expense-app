@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class EmailTextField extends StatelessWidget {
+class NameTextField extends StatelessWidget {
   final TextEditingController controller;
   final String? Function(String?)? validator;
 
-  const EmailTextField({
+  const NameTextField({
     super.key,
     required this.controller,
     this.validator,
@@ -14,12 +14,12 @@ class EmailTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
-      keyboardType: TextInputType.emailAddress,
       validator: validator,
+      textInputAction: TextInputAction.next,
       decoration: const InputDecoration(
-        labelText: 'Email',
-        hintText: 'Enter your email',
-        prefixIcon: Icon(Icons.email_outlined),
+        labelText: 'Full Name',
+        hintText: 'Enter your full name',
+        prefixIcon: Icon(Icons.person_outline),
       ),
     );
   }

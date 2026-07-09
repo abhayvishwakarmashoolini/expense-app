@@ -1,9 +1,11 @@
 class AppRoutes {
   AppRoutes._();
 
-  static const splash = '/';
+  static const String splash = '/';
+  static const String onboarding = '/onboarding';
 
-  static const onboarding = '/onboarding';
+  static const String login = '/login';
+  static const String signup = '/signup';
 
-  static const login = '/login';
+  static const String home = '/home';
 }
